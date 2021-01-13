@@ -1,0 +1,22 @@
+init function in js creates the following html elements
+    -Header with "View high scores" link top left and timer (set to 0) top right
+    -Title h1 element-aligned center
+    -Explanatory p element below
+    -Start button
+
+Clicking start button leads to
+    -Creates h1 element with first question
+    -Creates 4 answer buttons, each with a connected js variable
+    -Creates dividing line and blank text area below buttons
+    -Adds default 120 second value to timer
+    
+    If "button clicked" is tied to [correct answer var]
+        -Text area fills with message "CORRECT"
+        -Player score increases by 5
+        -Next question loads
+        -Timer continues as normal
+    
+    Else if "button clicked" is not
+        -Text area fills with message "WRONG"
+        -Player score decreases by 1
+        -Timer subtracts 10 seconds
