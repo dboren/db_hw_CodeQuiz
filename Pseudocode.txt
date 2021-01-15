@@ -8,7 +8,7 @@ Clicking start button leads to
     -Creates h1 element with first question
     -Creates 4 answer buttons, each with a connected js variable
     -Creates dividing line and blank text area below buttons
-    -Adds default 120 second value to timer
+    -Adds default 100 second value to timer
     
     If "button clicked" is tied to [correct answer var]
         -Text area fills with message "CORRECT"
@@ -20,3 +20,48 @@ Clicking start button leads to
         -Text area fills with message "WRONG"
         -Player score decreases by 1
         -Timer subtracts 10 seconds
+        -Next question loads
+
+Repeat cycle for a total of 5 questions
+
+After final question, creates following html elements
+    h1 reading "All done!
+    h2 Your score is "whatever number was determined by answers"
+    Form with the prompt "enter your initials"
+    Initials and score are saved to local storage and added to viewable high score page
+
+
+Question 1
+    Which of the following is not a javascript data type?
+        Boolean
+        String
+        Array
+        Matrix *
+
+Question 2
+    When an html element is nested within another html element, the nested element is called the other element's ______.
+        Child *
+        Spinoff
+        Subset
+        Elementlet
+
+Question 3
+    The following code "(var i = 0; i > array.length; i++) is an example of a/an ______.
+        Initializer
+        Iterator *
+        Bitrater
+        Additive
+
+Question 4
+    Which method adds a new item to an existing array?
+        .split
+        .plus
+        .push *
+        .add
+
+Question 5
+    What attribute does a # in a css selector target?
+        Class
+        ID *
+        href
+        alt
