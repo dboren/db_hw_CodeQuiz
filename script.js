@@ -15,6 +15,9 @@ var launchHeaderText = document.createTextNode("Quick Coding Quiz");
 var explainerEl = document.createElement("p");
 var explainerText = document.createTextNode("Click the start button to begin. You will have 100 seconds to complete the quiz. Additional time will be subtracted for incorrect answers.");
 
+var startButton = document.createElement("button");
+var startButtonText = document.createTextNode("START");
+
 function init() {
     document.body.appendChild(pageHeader);
     pageHeader.appendChild(highScoresLink);
@@ -30,7 +33,10 @@ function init() {
     launchCentral.appendChild(explainerEl);
     explainerEl.appendChild(explainerText);
 
-    
+    launchCentral.appendChild(startButton);
+    startButton.appendChild(startButtonText);
+
+
 
 
 
