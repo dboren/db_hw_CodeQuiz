@@ -22,10 +22,10 @@ var question = document.createElement("h1");
 
 var q1Text = document.createTextNode("Which of the following is not a javascript data type?")
 
-var aButton1 = document.createElement("button");
-var aButton2 = document.createElement("button");
-var aButton3 = document.createElement("button");
-var aButton4 = document.createElement("button");
+var ans1Button = document.createElement("button");
+var ans2Button = document.createElement("button");
+var ans3Button = document.createElement("button");
+var ans4Button = document.createElement("button");
 
 function init() {
     document.body.appendChild(pageHeader);
@@ -51,10 +51,39 @@ function startQuiz() {
     explainerEl.remove();
     startButton.remove();
     
-    secondsLeft = 0;
+    secondsLeft = 100;
 
     launchCentral.appendChild(question);
     question.appendChild(q1Text);
+
+    var ansColumn = document.createElement("ol");
+    
+    var ans1Row = document.createElement("li");
+    var ans2Row = document.createElement("li");
+    var ans3Row = document.createElement("li");
+    var ans4Row = document.createElement("li");
+
+    var ans1ButtonText = document.createTextNode("Boolean");
+    var ans2ButtonText = document.createTextNode("String");
+    var ans3ButtonText = document.createTextNode("Array");
+    var ans4ButtonText = document.createTextNode("Matrix");
+
+
+    ansColumn.appendChild(ans1Row);
+    ans1Row.appendChild(ans1Button);
+    ans1Button.appendChild(ans1ButtonText);
+
+    ansColumn.appendChild(ans2Row);
+    ans2Row.appendChild(ans2Button);
+    ans2Button.appendChild(ans2ButtonText);
+
+    ansColumn.appendChild(ans3Row);
+    ans3Row.appendChild(ans3Button);
+    ans3Button.appendChild(ans3ButtonText);
+
+    ansColumn.appendChild(ans4Row);
+    launchCentral.appendChild(ans4Button);
+    ans4Row.appendChild(ans4ButtonText);
 }
 
 init();
