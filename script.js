@@ -18,7 +18,14 @@ var explainerText = document.createTextNode("Click the start button to begin. Yo
 var startButton = document.createElement("button");
 var startButtonText = document.createTextNode("START");
 
-var q1Text = "Which of the following is not a javascript data type?"
+var question = document.createElement("h1");
+
+var q1Text = document.createTextNode("Which of the following is not a javascript data type?")
+
+var aButton1 = document.createElement("button");
+var aButton2 = document.createElement("button");
+var aButton3 = document.createElement("button");
+var aButton4 = document.createElement("button");
 
 function init() {
     document.body.appendChild(pageHeader);
@@ -45,6 +52,9 @@ function startQuiz() {
     startButton.remove();
     
     secondsLeft = 0;
+
+    launchCentral.appendChild(question);
+    question.appendChild(q1Text);
 }
 
 init();
