@@ -68,6 +68,7 @@ function startQuiz() {
     var ans3ButtonText = document.createTextNode("Array");
     var ans4ButtonText = document.createTextNode("Matrix");
 
+    launchCentral.appendChild(ansColumn);
 
     ansColumn.appendChild(ans1Row);
     ans1Row.appendChild(ans1Button);
@@ -82,8 +83,8 @@ function startQuiz() {
     ans3Button.appendChild(ans3ButtonText);
 
     ansColumn.appendChild(ans4Row);
-    launchCentral.appendChild(ans4Button);
-    ans4Row.appendChild(ans4ButtonText);
+    ans4Row.appendChild(ans4Button);
+    ans4Button.appendChild(ans4ButtonText);
 }
 
 init();
