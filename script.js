@@ -5,6 +5,9 @@ var pageHeader = document.createElement("div");
 var highScoresLink = document.createElement("A");
 var highScoresLinkText = document.createTextNode("View high scores");
 
+var scoreEl = document.createElement("p");
+var scoreText = document.createTextNode("Current score:" + currentScore);
+
 var timerEl = document.createElement("p");
 var timerText = document.createTextNode("Seconds remaining:" + secondsLeft);
 
@@ -52,6 +55,9 @@ function startQuiz() {
     startButton.remove();
     
     secondsLeft = 100;
+
+    pageHeader.appendChild(scoreEl);
+    scoreEl.appendChild(scoreText);
 
     launchCentral.appendChild(question);
     question.appendChild(q1Text);
