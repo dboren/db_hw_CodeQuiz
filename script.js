@@ -49,6 +49,15 @@ function init() {
     startButton.appendChild(startButtonText);
     };
 
+function countDown() {
+    // var countdownInterval = 
+    setInterval(function(){
+            secondsLeft--;
+            timerText.textContent = secondsLeft;  
+        }, 1000) 
+    };
+
+
 function startQuiz() {
     launchHeader.remove();
     explainerEl.remove();
@@ -91,6 +100,10 @@ function startQuiz() {
     ansColumn.appendChild(ans4Row);
     ans4Row.appendChild(ans4Button);
     ans4Button.appendChild(ans4ButtonText);
+
+    countDown();
+    console.log(secondsLeft);
+
 }
 
 init();
