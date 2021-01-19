@@ -150,6 +150,13 @@ function correctA1() {
     launchCentral.appendChild(resultText);
     resultText.textContent = "Correct!";
 
+    ans1Button.addEventListener("click", correctA2);
+
+    ans2Button.addEventListener("click", inCorrectA2);
+    ans3Button.addEventListener("click", inCorrectA2);
+    ans4Button.addEventListener("click", inCorrectA2);
+
+
 
 };
 
@@ -171,29 +178,140 @@ function inCorrectA1() {
     launchCentral.appendChild(resultText);
     resultText.textContent = "Wrong!";
 
+    ans1Button.addEventListener("click", correctA2);
+
+    ans2Button.addEventListener("click", inCorrectA2);
+    ans3Button.addEventListener("click", inCorrectA2);
+    ans4Button.addEventListener("click", inCorrectA2);
 
 };
 
 //When Q2 is answered correctly
-// function correctA2() {
-//     currentScore = currentScore +5;
-//     scoreText.textContent = ("Current score: " + currentScore);
-//     console.log(currentScore);
+function correctA2() {
+    currentScore = currentScore +5;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
 
-//     question.appendChild(q2Text);
+    question.textContent = "The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.";
 
-//     ans1Button.textContent = ("child");
-//     ans2Button.textContent = ("spinoff");
-//     ans3Button.textContent = ("subset");
-//     ans4Button.textContent = ("elementlet");
+    ans1Button.textContent = ("initializer");
+    ans2Button.textContent = ("iterator");
+    ans3Button.textContent = ("bitrater");
+    ans4Button.textContent = ("additive");
 
-//     launchCentral.appendChild(resultLine);
-//     launchCentral.appendChild(resultEl);
-//     launchCentral.appendChild(resultText);
-//     resultText.textContent = "Correct!";
+    resultText.textContent = "Correct!";
+
+    ans2Button.addEventListener("click", correctA3);
+
+    ans1Button.addEventListener("click", inCorrectA3);
+    ans3Button.addEventListener("click", inCorrectA3);
+    ans4Button.addEventListener("click", inCorrectA3);
+};
+
+//When Q2 is answered INcorrectly
+function inCorrectA2() {
+    currentScore = currentScore -3;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
+
+    question.textContent = "The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.";
+
+    ans1Button.textContent = ("initializer");
+    ans2Button.textContent = ("iterator");
+    ans3Button.textContent = ("bitrater");
+    ans4Button.textContent = ("additive");
+
+    resultText.textContent = "Wrong!";
+
+    ans2Button.addEventListener("click", correctA3);
+
+    ans1Button.addEventListener("click", inCorrectA3);
+    ans3Button.addEventListener("click", inCorrectA3);
+    ans4Button.addEventListener("click", inCorrectA3);
+
+};
+
+//When Q3 is answered correctly
+function correctA3() {
+    currentScore = currentScore +5;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
+
+    question.textContent = "Which method adds a new item to an existing array?";
+
+    ans1Button.textContent = (".split");
+    ans2Button.textContent = (".plus");
+    ans3Button.textContent = (".push");
+    ans4Button.textContent = (".add");
+
+    resultText.textContent = "Correct!";
+
+    ans3Button.addEventListener("click", correctA4);
+
+    ans1Button.addEventListener("click", inCorrectA4);
+    ans2Button.addEventListener("click", inCorrectA4);
+    ans4Button.addEventListener("click", inCorrectA4);
 
 
-// };
+};
+
+//When Q3 is answered INcorrectly
+function inCorrectA3() {
+    currentScore = currentScore -3;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
+
+    question.textContent = "Which method adds a new item to an existing array?";
+
+    ans1Button.textContent = (".split");
+    ans2Button.textContent = (".plus");
+    ans3Button.textContent = (".push");
+    ans4Button.textContent = (".add");
+
+    resultText.textContent = "Wrong!";
+
+    ans3Button.addEventListener("click", correctA4);
+
+    ans1Button.addEventListener("click", inCorrectA4);
+    ans2Button.addEventListener("click", inCorrectA4);
+    ans4Button.addEventListener("click", inCorrectA4);
+};
+
+//When Q4 is answered correctly
+function correctA4() {
+    currentScore = currentScore +5;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
+
+    question.textContent = "What attribute does a # in a css selector target?";
+
+    ans1Button.textContent = ("class");
+    ans2Button.textContent = ("ID");
+    ans3Button.textContent = ("href");
+    ans4Button.textContent = ("alt");
+
+    resultText.textContent = "Correct!";
+
+
+};
+
+//When Q4 is answered INcorrectly
+function inCorrectA4() {
+    currentScore = currentScore +5;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
+
+    question.textContent = "What attribute does a # in a css selector target?";
+
+    ans1Button.textContent = ("class");
+    ans2Button.textContent = ("ID");
+    ans3Button.textContent = ("href");
+    ans4Button.textContent = ("alt");
+
+    resultText.textContent = "Wrong";
+
+
+};
 
 init();
 
