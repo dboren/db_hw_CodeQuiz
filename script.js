@@ -127,7 +127,7 @@ function startQuiz() {
 
 //When Q1 is answered correctly
 function correctA1() {
-    currentScore + 5;
+    currentScore = currentScore +5;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
 
