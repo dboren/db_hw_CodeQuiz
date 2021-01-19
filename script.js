@@ -23,8 +23,11 @@ var startButtonText = document.createTextNode("START");
 
 var question = document.createElement("h1");
 
-var q1Text = document.createTextNode("Which of the following is not a javascript data type?")
-var q2Text = document.createTextNode("When an html element is nested within another html element, the nested element is called the other element's ______.")
+var q1Text = document.createTextNode("Which of the following is not a javascript data type?");
+var q2Text = document.createTextNode("When an html element is nested within another html element, the nested element is called the other element's ______.");
+var q3Text = document.createTextNode("The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.");
+var q4Text = document.createTextNode("Which method adds a new item to an existing array?")
+var q5Text = document.createTextNode("What attribute does a # in a css selector target?")
 
 var ans1Button = document.createElement("button");
 var ans2Button = document.createElement("button");
@@ -122,6 +125,10 @@ function startQuiz() {
 
     ans4Button.addEventListener("click", correctA1);
 
+    ans1Button.addEventListener("click", inCorrectA1);
+    ans2Button.addEventListener("click", inCorrectA1);
+    ans3Button.addEventListener("click", inCorrectA1);
+
     
 };
 
@@ -144,7 +151,49 @@ function correctA1() {
     resultText.textContent = "Correct!";
 
 
-}
+};
+
+//When Q1 is answered INcorrectly
+function inCorrectA1() {
+    currentScore = currentScore -3;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
+
+    question.appendChild(q2Text);
+
+    ans1Button.textContent = ("child");
+    ans2Button.textContent = ("spinoff");
+    ans3Button.textContent = ("subset");
+    ans4Button.textContent = ("elementlet");
+
+    launchCentral.appendChild(resultLine);
+    launchCentral.appendChild(resultEl);
+    launchCentral.appendChild(resultText);
+    resultText.textContent = "Wrong!";
+
+
+};
+
+//When Q2 is answered correctly
+// function correctA2() {
+//     currentScore = currentScore +5;
+//     scoreText.textContent = ("Current score: " + currentScore);
+//     console.log(currentScore);
+
+//     question.appendChild(q2Text);
+
+//     ans1Button.textContent = ("child");
+//     ans2Button.textContent = ("spinoff");
+//     ans3Button.textContent = ("subset");
+//     ans4Button.textContent = ("elementlet");
+
+//     launchCentral.appendChild(resultLine);
+//     launchCentral.appendChild(resultEl);
+//     launchCentral.appendChild(resultText);
+//     resultText.textContent = "Correct!";
+
+
+// };
 
 init();
 
