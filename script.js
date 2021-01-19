@@ -6,7 +6,7 @@ var highScoresLink = document.createElement("A");
 var highScoresLinkText = document.createTextNode("View high scores");
 
 var scoreEl = document.createElement("p");
-var scoreText = document.createTextNode("Current score:" + currentScore);
+var scoreText = document.createTextNode("Current score: " + currentScore);
 
 var timerEl = document.createElement("p");
 var timerText = document.createTextNode("Seconds remaining:" + secondsLeft);
@@ -24,11 +24,28 @@ var startButtonText = document.createTextNode("START");
 var question = document.createElement("h1");
 
 var q1Text = document.createTextNode("Which of the following is not a javascript data type?")
+var q2Text = document.createTextNode("When an html element is nested within another html element, the nested element is called the other element's ______.")
 
 var ans1Button = document.createElement("button");
 var ans2Button = document.createElement("button");
 var ans3Button = document.createElement("button");
 var ans4Button = document.createElement("button");
+
+var ansColumn = document.createElement("ol");
+    
+var ans1Row = document.createElement("li");
+var ans2Row = document.createElement("li");
+var ans3Row = document.createElement("li");
+var ans4Row = document.createElement("li");
+
+var ans1ButtonText = document.createTextNode("Boolean");
+var ans2ButtonText = document.createTextNode("String");
+var ans3ButtonText = document.createTextNode("Array");
+var ans4ButtonText = document.createTextNode("Matrix");
+
+var resultLine = document.createElement("hr");
+var resultEl = document.createElement("h2");
+var resultText = document.createTextNode("");
 
 function init() {
     document.body.appendChild(pageHeader);
@@ -50,14 +67,13 @@ function init() {
     };
 
 function countDown() {
-    // var countdownInterval = 
     setInterval(function(){
             secondsLeft--;
-            timerText.textContent = secondsLeft;  
+            timerText.textContent = "Seconds remaining: " + secondsLeft;  
         }, 1000) 
     };
 
-
+// When start button is clicked 
 function startQuiz() {
     launchHeader.remove();
     explainerEl.remove();
@@ -103,6 +119,30 @@ function startQuiz() {
 
     countDown();
     console.log(secondsLeft);
+
+    ans4Button.addEventListener("click", correctA1);
+
+    
+};
+
+//When Q1 is answered correctly
+function correctA1() {
+    currentScore + 5;
+    scoreText.textContent = ("Current score: " + currentScore);
+    console.log(currentScore);
+
+    question.appendChild(q2Text);
+
+    ans1Button.textContent = ("child");
+    ans2Button.textContent = ("spinoff");
+    ans3Button.textContent = ("subset");
+    ans4Button.textContent = ("elementlet");
+
+    launchCentral.appendChild(resultLine);
+    launchCentral.appendChild(resultEl);
+    launchCentral.appendChild(resultText);
+    resultText.textContent = "Correct!";
+
 
 }
 
