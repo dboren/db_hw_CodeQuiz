@@ -90,6 +90,9 @@ var resultLine = document.createElement("hr");
 var resultEl = document.createElement("h2");
 var resultText = document.createTextNode("");
 
+var homeButton = document.createElement("button");
+var homeButtonText = document.createTextNode("Try again?");
+
 function init() {
     document.body.appendChild(pageHeader);
     pageHeader.appendChild(highScoresLink);
@@ -123,6 +126,7 @@ function startQuiz() {
     explainerEl.remove();
     startButton.remove();
     
+    currentScore = 0;
     secondsLeft = 100;
 
     pageHeader.appendChild(scoreEl);
@@ -468,6 +472,11 @@ function correctA4() {
 
     resultText.textContent = "Correct!";
 
+    q5ans2Button.addEventListener("click", correctA5);
+
+    q5ans1Button.addEventListener("click", inCorrectA5);
+    q5ans3Button.addEventListener("click", inCorrectA5);
+    q5ans4Button.addEventListener("click", inCorrectA5);
 
 };
 
@@ -503,11 +512,57 @@ function inCorrectA4() {
     // ans3Button.textContent = ("href");
     // ans4Button.textContent = ("alt");
 
-    resultText.textContent = "Wrong";
+    resultText.textContent = "Wrong!";
+
+    q5ans2Button.addEventListener("click", correctA5);
+
+    q5ans1Button.addEventListener("click", inCorrectA5);
+    q5ans3Button.addEventListener("click", inCorrectA5);
+    q5ans4Button.addEventListener("click", inCorrectA5);
 
 
+};
+
+//generating end screen
+function goToEndScreen() {
+
+    question.remove()
+    ansColumn.remove();
+    q5ans1Button.remove();
+    q5ans2Button.remove();
+    q5ans3Button.remove();
+    q5ans4Button.remove();
+
+    launchCentral.appendChild(homeButton);
+    
+    homeButton.appendChild(homeButtonText);
+
+    var initials = prompt("Please enter your initials to register your score.");
+
+    homeButton.addEventListener("click", init);
+
+    
+
+
+
+
+}
+
+//When Q5 is answered correctly
+function correctA5() {
+    currentScore = currentScore + 5;
+    resultText.textContent = ("Correct! Your final score is " + currentScore + " ");
+    goToEndScreen();
+};
+
+//When Q5 is answered INcorrectly
+function inCorrectA5() {
+    currentScore = currentScore - 3;
+    resultText.textContent = ("Correct! Your final score is " + currentScore + " ");
+    goToEndScreen();
 };
 
 init();
 
 startButton.addEventListener("click", startQuiz);
+
