@@ -551,6 +551,15 @@ function goToEndScreen() {
 
     var initials = prompt("Please enter your initials to register your score.");
 
+    var scoreEntryStore = localStorage.getItem(initials);
+
+    var scoreEntry = {
+                    storedInitials: scoreEntryStore,
+                    score: currentScore
+    }
+
+    localStorage.setItem('scoreEntry', JSON.stringify(scoreEntry));
+
     homeButton.addEventListener("click", init);
 
     return initials;
@@ -566,7 +575,7 @@ function goToEndScreen() {
 function correctA5() {
     currentScore = currentScore + 5;
     resultText.textContent = ("Correct! Your final score is " + currentScore + " ");
-   clearInterval(timerInterval);
+    clearInterval(timerInterval);
     goToEndScreen();
 };
 
