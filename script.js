@@ -95,6 +95,8 @@ var homeButtonText = document.createTextNode("Try again?");
 
 var timerInterval;
 
+var highScoreList = [];
+
 //var countDownStop = false;
 
 function init() {
@@ -531,7 +533,7 @@ function inCorrectA4() {
 
 };
 
-//generating end screen
+//generating end screen and saving scores to localStorage
 function goToEndScreen() {
 
     // if (secondsLeft > 0) {
@@ -562,13 +564,13 @@ function goToEndScreen() {
 
     console.log(scoreEntry);
 
+    highScoreList.push(scoreEntry);
+
+    console.log(highScoreList);
+
     homeButton.addEventListener("click", init);
 
     return initials;
-
-   
-
-
 
 
 };
@@ -595,6 +597,14 @@ function timeOut() {
     goToEndScreen();
 
 };
+
+//viewing stored scores
+
+function viewHighScores() {
+
+var scoresHeading = document.createElement("h2");
+
+}
 
 init();
 
