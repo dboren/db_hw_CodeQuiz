@@ -59,6 +59,26 @@ var q3ans2ButtonText = document.createTextNode("iterator");
 var q3ans3ButtonText = document.createTextNode("bitrater");
 var q3ans4ButtonText = document.createTextNode("additive");
 
+var q4ans1Button = document.createElement("button");
+var q4ans2Button = document.createElement("button");
+var q4ans3Button = document.createElement("button");
+var q4ans4Button = document.createElement("button");
+
+var q4ans1ButtonText = document.createTextNode(".split");
+var q4ans2ButtonText = document.createTextNode(".plus");
+var q4ans3ButtonText = document.createTextNode(".push");
+var q4ans4ButtonText = document.createTextNode(".add");
+
+var q5ans1Button = document.createElement("button");
+var q5ans2Button = document.createElement("button");
+var q5ans3Button = document.createElement("button");
+var q5ans4Button = document.createElement("button");
+
+var q5ans1ButtonText = document.createTextNode("class");
+var q5ans2ButtonText = document.createTextNode("ID");
+var q5ans3ButtonText = document.createTextNode("href");
+var q5ans4ButtonText = document.createTextNode("alt");
+
 var ansColumn = document.createElement("ol");
     
 var ans1Row = document.createElement("li");
@@ -278,10 +298,10 @@ function correctA2() {
     ans4Row.appendChild(q3ans4Button);
     q3ans4Button.appendChild(q3ans4ButtonText);
 
-    ans1Button.textContent = ("initializer");
-    ans2Button.textContent = ("iterator");
-    ans3Button.textContent = ("bitrater");
-    ans4Button.textContent = ("additive");
+    // ans1Button.textContent = ("initializer");
+    // ans2Button.textContent = ("iterator");
+    // ans3Button.textContent = ("bitrater");
+    // ans4Button.textContent = ("additive");
 
     resultText.textContent = "Correct!";
 
@@ -319,10 +339,10 @@ function inCorrectA2() {
     ans4Row.appendChild(q3ans4Button);
     q3ans4Button.appendChild(q3ans4ButtonText);
 
-    ans1Button.textContent = ("initializer");
-    ans2Button.textContent = ("iterator");
-    ans3Button.textContent = ("bitrater");
-    ans4Button.textContent = ("additive");
+    // ans1Button.textContent = ("initializer");
+    // ans2Button.textContent = ("iterator");
+    // ans3Button.textContent = ("bitrater");
+    // ans4Button.textContent = ("additive");
 
     resultText.textContent = "Wrong!";
 
@@ -342,18 +362,35 @@ function correctA3() {
 
     question.textContent = "Which method adds a new item to an existing array?";
 
-    ans1Button.textContent = (".split");
-    ans2Button.textContent = (".plus");
-    ans3Button.textContent = (".push");
-    ans4Button.textContent = (".add");
+    q3ans1Button.remove();
+    q3ans2Button.remove();
+    q3ans3Button.remove();
+    q3ans4Button.remove();
+
+    ans1Row.appendChild(q4ans1Button);
+    q4ans1Button.appendChild(q4ans1ButtonText);
+
+    ans2Row.appendChild(q4ans2Button);
+    q4ans2Button.appendChild(q4ans2ButtonText);
+
+    ans3Row.appendChild(q4ans3Button);
+    q4ans3Button.appendChild(q4ans3ButtonText);
+
+    ans4Row.appendChild(q4ans4Button);
+    q4ans4Button.appendChild(q4ans4ButtonText);
+
+    // ans1Button.textContent = (".split");
+    // ans2Button.textContent = (".plus");
+    // ans3Button.textContent = (".push");
+    // ans4Button.textContent = (".add");
 
     resultText.textContent = "Correct!";
 
-    ans3Button.addEventListener("click", correctA4);
+    q4ans3Button.addEventListener("click", correctA4);
 
-    ans1Button.addEventListener("click", inCorrectA4);
-    ans2Button.addEventListener("click", inCorrectA4);
-    ans4Button.addEventListener("click", inCorrectA4);
+    q4ans1Button.addEventListener("click", inCorrectA4);
+    q4ans2Button.addEventListener("click", inCorrectA4);
+    q4ans4Button.addEventListener("click", inCorrectA4);
 
 
 };
@@ -368,18 +405,35 @@ function inCorrectA3() {
 
     question.textContent = "Which method adds a new item to an existing array?";
 
-    ans1Button.textContent = (".split");
-    ans2Button.textContent = (".plus");
-    ans3Button.textContent = (".push");
-    ans4Button.textContent = (".add");
+    q3ans1Button.remove();
+    q3ans2Button.remove();
+    q3ans3Button.remove();
+    q3ans4Button.remove();
+
+    ans1Row.appendChild(q4ans1Button);
+    q4ans1Button.appendChild(q4ans1ButtonText);
+
+    ans2Row.appendChild(q4ans2Button);
+    q4ans2Button.appendChild(q4ans2ButtonText);
+
+    ans3Row.appendChild(q4ans3Button);
+    q4ans3Button.appendChild(q4ans3ButtonText);
+
+    ans4Row.appendChild(q4ans4Button);
+    q4ans4Button.appendChild(q4ans4ButtonText);
+
+    // ans1Button.textContent = (".split");
+    // ans2Button.textContent = (".plus");
+    // ans3Button.textContent = (".push");
+    // ans4Button.textContent = (".add");
 
     resultText.textContent = "Wrong!";
 
-    ans3Button.addEventListener("click", correctA4);
+    q4ans3Button.addEventListener("click", correctA4);
 
-    ans1Button.addEventListener("click", inCorrectA4);
-    ans2Button.addEventListener("click", inCorrectA4);
-    ans4Button.addEventListener("click", inCorrectA4);
+    q4ans1Button.addEventListener("click", inCorrectA4);
+    q4ans2Button.addEventListener("click", inCorrectA4);
+    q4ans4Button.addEventListener("click", inCorrectA4);
 };
 
 //When Q4 is answered correctly
@@ -390,10 +444,27 @@ function correctA4() {
 
     question.textContent = "What attribute does a # in a css selector target?";
 
-    ans1Button.textContent = ("class");
-    ans2Button.textContent = ("ID");
-    ans3Button.textContent = ("href");
-    ans4Button.textContent = ("alt");
+    q4ans1Button.remove();
+    q4ans2Button.remove();
+    q4ans3Button.remove();
+    q4ans4Button.remove();
+
+    ans1Row.appendChild(q5ans1Button);
+    q5ans1Button.appendChild(q5ans1ButtonText);
+
+    ans2Row.appendChild(q5ans2Button);
+    q5ans2Button.appendChild(q5ans2ButtonText);
+
+    ans3Row.appendChild(q5ans3Button);
+    q5ans3Button.appendChild(q5ans3ButtonText);
+
+    ans4Row.appendChild(q5ans4Button);
+    q5ans4Button.appendChild(q5ans4ButtonText);
+
+    // ans1Button.textContent = ("class");
+    // ans2Button.textContent = ("ID");
+    // ans3Button.textContent = ("href");
+    // ans4Button.textContent = ("alt");
 
     resultText.textContent = "Correct!";
 
@@ -402,7 +473,7 @@ function correctA4() {
 
 //When Q4 is answered INcorrectly
 function inCorrectA4() {
-    currentScore = currentScore +5;
+    currentScore = currentScore -3;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
     secondsLeft = secondsLeft - 10;
@@ -410,10 +481,27 @@ function inCorrectA4() {
 
     question.textContent = "What attribute does a # in a css selector target?";
 
-    ans1Button.textContent = ("class");
-    ans2Button.textContent = ("ID");
-    ans3Button.textContent = ("href");
-    ans4Button.textContent = ("alt");
+    q4ans1Button.remove();
+    q4ans2Button.remove();
+    q4ans3Button.remove();
+    q4ans4Button.remove();
+
+    ans1Row.appendChild(q5ans1Button);
+    q5ans1Button.appendChild(q5ans1ButtonText);
+
+    ans2Row.appendChild(q5ans2Button);
+    q5ans2Button.appendChild(q5ans2ButtonText);
+
+    ans3Row.appendChild(q5ans3Button);
+    q5ans3Button.appendChild(q5ans3ButtonText);
+
+    ans4Row.appendChild(q5ans4Button);
+    q5ans4Button.appendChild(q5ans4ButtonText);
+
+    // ans1Button.textContent = ("class");
+    // ans2Button.textContent = ("ID");
+    // ans3Button.textContent = ("href");
+    // ans4Button.textContent = ("alt");
 
     resultText.textContent = "Wrong";
 
