@@ -93,6 +93,8 @@ var resultText = document.createTextNode("");
 var homeButton = document.createElement("button");
 var homeButtonText = document.createTextNode("Try again?");
 
+//var countDownStop = false;
+
 function init() {
     document.body.appendChild(pageHeader);
     pageHeader.appendChild(highScoresLink);
@@ -114,11 +116,15 @@ function init() {
 
 function countDown() {
     setInterval(function(){
-        if (secondsLeft > 0)
+        if (secondsLeft > 0) {
             secondsLeft--;
             timerText.textContent = "Seconds remaining: " + secondsLeft;  
-        }, 1000) 
-    };
+        } else if (secondsLeft <= 0) {
+            clearInterval(countDown);
+            timeOut();
+        }}, 1000) 
+    
+        };
 
 // When start button is clicked 
 function startQuiz() {
@@ -526,6 +532,10 @@ function inCorrectA4() {
 //generating end screen
 function goToEndScreen() {
 
+    // if (secondsLeft > 0) {
+    //     secondsLeft = 0;
+    // };
+
     question.remove()
     ansColumn.remove();
     q5ans1Button.remove();
@@ -541,12 +551,12 @@ function goToEndScreen() {
 
     homeButton.addEventListener("click", init);
 
-    
+   
 
 
 
 
-}
+};
 
 //When Q5 is answered correctly
 function correctA5() {
@@ -560,6 +570,12 @@ function inCorrectA5() {
     currentScore = currentScore - 3;
     resultText.textContent = ("Correct! Your final score is " + currentScore + " ");
     goToEndScreen();
+};
+
+function timeOut() {
+    alert("You've run out of time!");
+    goToEndScreen();
+
 };
 
 init();
