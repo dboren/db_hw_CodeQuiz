@@ -150,10 +150,10 @@ function startQuiz() {
     // var ans3Row = document.createElement("li");
     // var ans4Row = document.createElement("li");
 
-    var ans1ButtonText = document.createTextNode("Boolean");
-    var ans2ButtonText = document.createTextNode("String");
-    var ans3ButtonText = document.createTextNode("Array");
-    var ans4ButtonText = document.createTextNode("Matrix");
+    // var ans1ButtonText = document.createTextNode("Boolean");
+    // var ans2ButtonText = document.createTextNode("String");
+    // var ans3ButtonText = document.createTextNode("Array");
+    // var ans4ButtonText = document.createTextNode("Matrix");
 
     launchCentral.appendChild(ansColumn);
 
