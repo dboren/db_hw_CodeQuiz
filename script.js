@@ -3,6 +3,7 @@ var secondsLeft = 100;
 
 var pageHeader = document.createElement("div");
 var highScoresLink = document.createElement("A");
+highScoresLink.setAttribute("href", viewHighScores);
 var highScoresLinkText = document.createTextNode("View high scores");
 
 var scoreEl = document.createElement("p");
@@ -102,7 +103,6 @@ var highScoreList = [];
 function init() {
     document.body.appendChild(pageHeader);
     pageHeader.appendChild(highScoresLink);
-    highScoresLink.setAttribute("href", "HighScores.html");
     highScoresLink.appendChild(highScoresLinkText);
 
     pageHeader.appendChild(timerEl);
@@ -602,9 +602,13 @@ function timeOut() {
 
 function viewHighScores() {
 
+    var highScoresDiv = document.createElement("div");
+
+    document.body.appendChild(highScoresDiv);
+
     var scoresHeading = document.createElement("h2");
     var scoresHeadingText = document.createTextNode("High scores:")
-    launchCentral.appendChild(scoresHeading);
+    highScoresDiv.appendChild(scoresHeading);
     scoresHeading.appendChild(scoresHeadingText);
 
     for (var i = 0; i < highScoreList.length; i++) {
@@ -616,7 +620,6 @@ function viewHighScores() {
 
      var scoreRow = document.createElement("li");
      scoreRow.textContent = highScoreEntry;
-  //      li.setAttribute("data-index", i);
         scoreListColumn.appendChild(scoreRow);
 
 
@@ -631,4 +634,3 @@ init();
 startButton.addEventListener("click", startQuiz);
 
 highScoresLink.addEventListener("click", viewHighScores);
-
