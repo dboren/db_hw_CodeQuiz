@@ -551,14 +551,16 @@ function goToEndScreen() {
 
     var initials = prompt("Please enter your initials to register your score.");
 
-    var scoreEntryStore = localStorage.getItem(initials);
+    var initialEntryStore = localStorage.getItem("initials");
 
     var scoreEntry = {
-                    storedInitials: scoreEntryStore,
+                    storedInitials: initialEntryStore,
                     score: currentScore
     }
 
     localStorage.setItem('scoreEntry', JSON.stringify(scoreEntry));
+
+    console.log(scoreEntry);
 
     homeButton.addEventListener("click", init);
 
