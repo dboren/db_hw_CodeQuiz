@@ -602,11 +602,33 @@ function timeOut() {
 
 function viewHighScores() {
 
-var scoresHeading = document.createElement("h2");
+    var scoresHeading = document.createElement("h2");
+    var scoresHeadingText = document.createTextNode("High scores:")
+    launchCentral.appendChild(scoresHeading);
+    scoresHeading.appendChild(scoresHeadingText);
 
+    for (var i = 0; i < highScoreList.length; i++) {
+     var highScoreEntry = highScoreList[i];
+    
+     var scoreListColumn = document.createElement("ul")
+     launchCentral.appendChild(scoreListColumn);
+
+
+     var scoreRow = document.createElement("li");
+     scoreRow.textContent = highScoreEntry;
+  //      li.setAttribute("data-index", i);
+        scoreListColumn.appendChild(scoreRow);
+
+
+  }
+
+  
 }
+
 
 init();
 
 startButton.addEventListener("click", startQuiz);
+
+highScoresLink.addEventListener("click", viewHighScores);
 
