@@ -551,10 +551,10 @@ function goToEndScreen() {
 
     var initials = prompt("Please enter your initials to register your score.");
 
-    var initialEntryStore = localStorage.getItem("initials");
+   // var initialEntryStore = localStorage.getItem("initials");
 
     var scoreEntry = {
-                    storedInitials: initialEntryStore,
+                    storedInitials: initials,
                     score: currentScore
     }
 
