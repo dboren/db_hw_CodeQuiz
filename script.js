@@ -34,6 +34,16 @@ var ans2Button = document.createElement("button");
 var ans3Button = document.createElement("button");
 var ans4Button = document.createElement("button");
 
+var q2ans1Button = document.createElement("button");
+var q2ans2Button = document.createElement("button");
+var q2ans3Button = document.createElement("button");
+var q2ans4Button = document.createElement("button");
+
+var q2ans1ButtonText = document.createTextNode("child");
+var q2ans2ButtonText = document.createTextNode("spinoff");
+var q2ans3ButtonText = document.createTextNode("subset");
+var q2ans4ButtonText = document.createTextNode("elementlet");
+
 var ansColumn = document.createElement("ol");
     
 var ans1Row = document.createElement("li");
@@ -138,23 +148,50 @@ function correctA1() {
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
 
-    question.appendChild(q2Text);
+    question.textContent = "When an html element is nested within another html element, the nested element is called the other element's ______.";
 
-    ans1Button.textContent = ("child");
-    ans2Button.textContent = ("spinoff");
-    ans3Button.textContent = ("subset");
-    ans4Button.textContent = ("elementlet");
+    ans1Button.remove();
+    ans2Button.remove();
+    ans3Button.remove();
+    ans4Button.remove();
+
+    // var q2ans1Button = document.createElement("button");
+    // var q2ans2Button = document.createElement("button");
+    // var q2ans3Button = document.createElement("button");
+    // var q2ans4Button = document.createElement("button");
+
+    // var q2ans1ButtonText = document.createTextNode("child");
+    // var q2ans2ButtonText = document.createTextNode("spinoff");
+    // var q2ans3ButtonText = document.createTextNode("subset");
+    // var q2ans4ButtonText = document.createTextNode("elementlet");
+
+    ans1Row.appendChild(q2ans1Button);
+    q2ans1Button.appendChild(q2ans1ButtonText);
+
+    ans2Row.appendChild(q2ans2Button);
+    q2ans2Button.appendChild(q2ans2ButtonText);
+
+    ans3Row.appendChild(q2ans3Button);
+    q2ans3Button.appendChild(q2ans3ButtonText);
+
+    ans4Row.appendChild(q2ans4Button);
+    q2ans4Button.appendChild(q2ans4ButtonText);
+
+    // q2ans1Button.textContent = ("child");
+    // q2ans2Button.textContent = ("spinoff");
+    // q2ans3Button.textContent = ("subset");
+    // q2ans4Button.textContent = ("elementlet");
 
     launchCentral.appendChild(resultLine);
     launchCentral.appendChild(resultEl);
     launchCentral.appendChild(resultText);
     resultText.textContent = "Correct!";
 
-    ans1Button.addEventListener("click", correctA2);
+    // ans1Button.addEventListener("click", correctA2);
 
-    ans2Button.addEventListener("click", inCorrectA2);
-    ans3Button.addEventListener("click", inCorrectA2);
-    ans4Button.addEventListener("click", inCorrectA2);
+    // ans2Button.addEventListener("click", inCorrectA2);
+    // ans3Button.addEventListener("click", inCorrectA2);
+    // ans4Button.addEventListener("click", inCorrectA2);
 
 
 
@@ -165,24 +202,43 @@ function inCorrectA1() {
     currentScore = currentScore -3;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    secondsLeft = secondsLeft - 10;
+    timerText.textcontent = ("Seconds remaining: " + secondsLeft);
 
-    question.appendChild(q2Text);
+    question.textContent = ("When an html element is nested within another html element, the nested element is called the other element's ______.");
 
-    ans1Button.textContent = ("child");
-    ans2Button.textContent = ("spinoff");
-    ans3Button.textContent = ("subset");
-    ans4Button.textContent = ("elementlet");
+    ans1Button.remove();
+    ans2Button.remove();
+    ans3Button.remove();
+    ans4Button.remove();
+
+    ans1Row.appendChild(q2ans1Button);
+    q2ans1Button.appendChild(q2ans1ButtonText);
+
+    ans2Row.appendChild(q2ans2Button);
+    q2ans2Button.appendChild(q2ans2ButtonText);
+
+    ans3Row.appendChild(q2ans3Button);
+    q2ans3Button.appendChild(q2ans3ButtonText);
+
+    ans4Row.appendChild(q2ans4Button);
+    q2ans4Button.appendChild(q2ans4ButtonText);
+
+    // ans1Button.textContent = ("child");
+    // ans2Button.textContent = ("spinoff");
+    // ans3Button.textContent = ("subset");
+    // ans4Button.textContent = ("elementlet");
 
     launchCentral.appendChild(resultLine);
     launchCentral.appendChild(resultEl);
     launchCentral.appendChild(resultText);
     resultText.textContent = "Wrong!";
 
-    ans1Button.addEventListener("click", correctA2);
+    // ans1Button.addEventListener("click", correctA2);
 
-    ans2Button.addEventListener("click", inCorrectA2);
-    ans3Button.addEventListener("click", inCorrectA2);
-    ans4Button.addEventListener("click", inCorrectA2);
+    // ans2Button.addEventListener("click", inCorrectA2);
+    // ans3Button.addEventListener("click", inCorrectA2);
+    // ans4Button.addEventListener("click", inCorrectA2);
 
 };
 
@@ -213,6 +269,8 @@ function inCorrectA2() {
     currentScore = currentScore -3;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    secondsLeft = secondsLeft - 10;
+    timerText.textcontent = ("Seconds remaining: " + secondsLeft);
 
     question.textContent = "The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.";
 
@@ -260,6 +318,8 @@ function inCorrectA3() {
     currentScore = currentScore -3;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    secondsLeft = secondsLeft - 10;
+    timerText.textcontent = ("Seconds remaining: " + secondsLeft);
 
     question.textContent = "Which method adds a new item to an existing array?";
 
@@ -300,6 +360,8 @@ function inCorrectA4() {
     currentScore = currentScore +5;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    secondsLeft = secondsLeft - 10;
+    timerText.textcontent = ("Seconds remaining: " + secondsLeft);
 
     question.textContent = "What attribute does a # in a css selector target?";
 
