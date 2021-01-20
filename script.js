@@ -81,7 +81,7 @@ function init() {
 
 function countDown() {
     setInterval(function(){
-        if (secondsLeft !== 0)
+        if (secondsLeft > 0)
             secondsLeft--;
             timerText.textContent = "Seconds remaining: " + secondsLeft;  
         }, 1000) 
@@ -101,12 +101,12 @@ function startQuiz() {
     launchCentral.appendChild(question);
     question.appendChild(q1Text);
 
-    var ansColumn = document.createElement("ol");
+    // var ansColumn = document.createElement("ol");
     
-    var ans1Row = document.createElement("li");
-    var ans2Row = document.createElement("li");
-    var ans3Row = document.createElement("li");
-    var ans4Row = document.createElement("li");
+    // var ans1Row = document.createElement("li");
+    // var ans2Row = document.createElement("li");
+    // var ans3Row = document.createElement("li");
+    // var ans4Row = document.createElement("li");
 
     var ans1ButtonText = document.createTextNode("Boolean");
     var ans2ButtonText = document.createTextNode("String");
@@ -188,11 +188,11 @@ function correctA1() {
     launchCentral.appendChild(resultText);
     resultText.textContent = "Correct!";
 
-    // ans1Button.addEventListener("click", correctA2);
+    q2ans1Button.addEventListener("click", correctA2);
 
-    // ans2Button.addEventListener("click", inCorrectA2);
-    // ans3Button.addEventListener("click", inCorrectA2);
-    // ans4Button.addEventListener("click", inCorrectA2);
+    q2ans2Button.addEventListener("click", inCorrectA2);
+    q2ans3Button.addEventListener("click", inCorrectA2);
+    q2ans4Button.addEventListener("click", inCorrectA2);
 
 
 
@@ -235,11 +235,11 @@ function inCorrectA1() {
     launchCentral.appendChild(resultText);
     resultText.textContent = "Wrong!";
 
-    // ans1Button.addEventListener("click", correctA2);
+    q2ans1Button.addEventListener("click", correctA2);
 
-    // ans2Button.addEventListener("click", inCorrectA2);
-    // ans3Button.addEventListener("click", inCorrectA2);
-    // ans4Button.addEventListener("click", inCorrectA2);
+    q2ans2Button.addEventListener("click", inCorrectA2);
+    q2ans3Button.addEventListener("click", inCorrectA2);
+    q2ans4Button.addEventListener("click", inCorrectA2);
 
 };
 
