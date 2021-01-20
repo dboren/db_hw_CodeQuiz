@@ -34,6 +34,11 @@ var ans2Button = document.createElement("button");
 var ans3Button = document.createElement("button");
 var ans4Button = document.createElement("button");
 
+var ans1ButtonText = document.createTextNode("Boolean");
+var ans2ButtonText = document.createTextNode("String");
+var ans3ButtonText = document.createTextNode("Array");
+var ans4ButtonText = document.createTextNode("Matrix");
+
 var q2ans1Button = document.createElement("button");
 var q2ans2Button = document.createElement("button");
 var q2ans3Button = document.createElement("button");
@@ -50,11 +55,6 @@ var ans1Row = document.createElement("li");
 var ans2Row = document.createElement("li");
 var ans3Row = document.createElement("li");
 var ans4Row = document.createElement("li");
-
-var ans1ButtonText = document.createTextNode("Boolean");
-var ans2ButtonText = document.createTextNode("String");
-var ans3ButtonText = document.createTextNode("Array");
-var ans4ButtonText = document.createTextNode("Matrix");
 
 var resultLine = document.createElement("hr");
 var resultEl = document.createElement("h2");
@@ -81,6 +81,7 @@ function init() {
 
 function countDown() {
     setInterval(function(){
+        if (secondsLeft !== 0)
             secondsLeft--;
             timerText.textContent = "Seconds remaining: " + secondsLeft;  
         }, 1000) 
