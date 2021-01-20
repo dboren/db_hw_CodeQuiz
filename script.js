@@ -49,6 +49,16 @@ var q2ans2ButtonText = document.createTextNode("spinoff");
 var q2ans3ButtonText = document.createTextNode("subset");
 var q2ans4ButtonText = document.createTextNode("elementlet");
 
+var q3ans1Button = document.createElement("button");
+var q3ans2Button = document.createElement("button");
+var q3ans3Button = document.createElement("button");
+var q3ans4Button = document.createElement("button");
+
+var q3ans1ButtonText = document.createTextNode("initializer");
+var q3ans2ButtonText = document.createTextNode("iterator");
+var q3ans3ButtonText = document.createTextNode("bitrater");
+var q3ans4ButtonText = document.createTextNode("additive");
+
 var ansColumn = document.createElement("ol");
     
 var ans1Row = document.createElement("li");
@@ -251,6 +261,23 @@ function correctA2() {
 
     question.textContent = "The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.";
 
+    q2ans1Button.remove();
+    q2ans2Button.remove();
+    q2ans3Button.remove();
+    q2ans4Button.remove();
+
+    ans1Row.appendChild(q3ans1Button);
+    q3ans1Button.appendChild(q3ans1ButtonText);
+
+    ans2Row.appendChild(q3ans2Button);
+    q3ans2Button.appendChild(q3ans2ButtonText);
+
+    ans3Row.appendChild(q3ans3Button);
+    q3ans3Button.appendChild(q3ans3ButtonText);
+
+    ans4Row.appendChild(q3ans4Button);
+    q3ans4Button.appendChild(q3ans4ButtonText);
+
     ans1Button.textContent = ("initializer");
     ans2Button.textContent = ("iterator");
     ans3Button.textContent = ("bitrater");
@@ -258,11 +285,11 @@ function correctA2() {
 
     resultText.textContent = "Correct!";
 
-    ans2Button.addEventListener("click", correctA3);
+    q3ans2Button.addEventListener("click", correctA3);
 
-    ans1Button.addEventListener("click", inCorrectA3);
-    ans3Button.addEventListener("click", inCorrectA3);
-    ans4Button.addEventListener("click", inCorrectA3);
+    q3ans1Button.addEventListener("click", inCorrectA3);
+    q3ans3Button.addEventListener("click", inCorrectA3);
+    q3ans4Button.addEventListener("click", inCorrectA3);
 };
 
 //When Q2 is answered INcorrectly
@@ -275,6 +302,23 @@ function inCorrectA2() {
 
     question.textContent = "The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.";
 
+    q2ans1Button.remove();
+    q2ans2Button.remove();
+    q2ans3Button.remove();
+    q2ans4Button.remove();
+
+    ans1Row.appendChild(q3ans1Button);
+    q3ans1Button.appendChild(q3ans1ButtonText);
+
+    ans2Row.appendChild(q3ans2Button);
+    q3ans2Button.appendChild(q3ans2ButtonText);
+
+    ans3Row.appendChild(q3ans3Button);
+    q3ans3Button.appendChild(q3ans3ButtonText);
+
+    ans4Row.appendChild(q3ans4Button);
+    q3ans4Button.appendChild(q3ans4ButtonText);
+
     ans1Button.textContent = ("initializer");
     ans2Button.textContent = ("iterator");
     ans3Button.textContent = ("bitrater");
@@ -282,11 +326,11 @@ function inCorrectA2() {
 
     resultText.textContent = "Wrong!";
 
-    ans2Button.addEventListener("click", correctA3);
+    q3ans2Button.addEventListener("click", correctA3);
 
-    ans1Button.addEventListener("click", inCorrectA3);
-    ans3Button.addEventListener("click", inCorrectA3);
-    ans4Button.addEventListener("click", inCorrectA3);
+    q3ans1Button.addEventListener("click", inCorrectA3);
+    q3ans3Button.addEventListener("click", inCorrectA3);
+    q3ans4Button.addEventListener("click", inCorrectA3);
 
 };
 
