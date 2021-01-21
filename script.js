@@ -2,8 +2,7 @@ var currentScore = 0;
 var secondsLeft = 100;
 
 var pageHeader = document.createElement("div");
-var highScoresLink = document.createElement("A");
-highScoresLink.setAttribute("href", viewHighScores);
+var highScoresLink = document.createElement("button");
 var highScoresLinkText = document.createTextNode("View high scores");
 
 var scoreEl = document.createElement("p");
@@ -101,6 +100,10 @@ var highScoreList = [];
 //var countDownStop = false;
 
 function init() {
+
+    var fetchScore = localStorage.getItem("scoreEntry");
+    if (fetchScore) highScoreList.push(JSON.parse(fetchScore));
+
     document.body.appendChild(pageHeader);
     pageHeader.appendChild(highScoresLink);
     highScoresLink.appendChild(highScoresLinkText);
@@ -600,37 +603,37 @@ function timeOut() {
 
 //viewing stored scores
 
-function viewHighScores() {
+// function viewHighScores() {
 
-    var highScoresDiv = document.createElement("div");
+//     var highScoresDiv = document.createElement("div");
 
-    document.body.appendChild(highScoresDiv);
+//     document.body.appendChild(highScoresDiv);
 
-    var scoresHeading = document.createElement("h2");
-    var scoresHeadingText = document.createTextNode("High scores:")
-    highScoresDiv.appendChild(scoresHeading);
-    scoresHeading.appendChild(scoresHeadingText);
+//     var scoresHeading = document.createElement("h2");
+//     var scoresHeadingText = document.createTextNode("High scores:")
+//     highScoresDiv.appendChild(scoresHeading);
+//     scoresHeading.appendChild(scoresHeadingText);
 
-    for (var i = 0; i < highScoreList.length; i++) {
-     var highScoreEntry = highScoreList[i];
+//     for (var i = 0; i < highScoreList.length; i++) {
+//      var highScoreEntry = highScoreList[i];
     
-     var scoreListColumn = document.createElement("ul")
-     launchCentral.appendChild(scoreListColumn);
+//      var scoreListColumn = document.createElement("ul")
+//      launchCentral.appendChild(scoreListColumn);
 
 
-     var scoreRow = document.createElement("li");
-     scoreRow.textContent = highScoreEntry;
-        scoreListColumn.appendChild(scoreRow);
+//      var scoreRow = document.createElement("li");
+//      scoreRow.textContent = highScoreEntry;
+//         scoreListColumn.appendChild(scoreRow);
 
 
-  }
+//   }
 
   
-}
+// };
 
 
 init();
 
 startButton.addEventListener("click", startQuiz);
 
-highScoresLink.addEventListener("click", viewHighScores);
+//highScoresLink.addEventListener("click", viewHighScores);
