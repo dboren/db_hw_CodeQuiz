@@ -125,17 +125,40 @@ function init() {
     startButton.appendChild(startButtonText);
     };
 
+// function countDown() {
+//     var timerInterval = setInterval(function() {
+//         if (secondsLeft > 0) {
+//             secondsLeft--;
+//             timerText.textContent = "Seconds remaining: " + secondsLeft;
+//             console.log("timer still going");
+//         } else if (questionsAnswered === 5) {
+//             clearInterval(timerInterval);
+//             console.log("answered all questions");
+//         }   else if (secondsLeft <= 0) {
+//             clearInterval(timerInterval);
+//             console.log("ran out of time");
+//             timeOut();
+//         }
+//     }, 1000) 
+
+//     };
+
 function countDown() {
-    var timerInterval = setInterval(function(){
-        if (secondsLeft > 0) {
-            secondsLeft--;
-            timerText.textContent = "Seconds remaining: " + secondsLeft;  
+    var timerInterval = setInterval(function() {
+        if (questionsAnswered === 5) {
+            clearInterval(timerInterval);
+            console.log("Answered all questions");
         } else if (secondsLeft <= 0) {
             clearInterval(timerInterval);
+            console.log("Ran out of time");
             timeOut();
-        }}, 1000) 
-    
-        };
+        } else (secondsLeft > 0); {
+            secondsLeft--;
+            timerText.textContent = "Seconds remaining: " + secondsLeft;
+            console.log("timer still going");
+        }
+    }, 1000)
+};
 
 // When start button is clicked 
 function startQuiz() {
@@ -144,7 +167,7 @@ function startQuiz() {
     startButton.remove();
     
     currentScore = 0;
-    secondsLeft = 60;
+    secondsLeft = 100;
 
     pageHeader.appendChild(scoreEl);
     scoreEl.appendChild(scoreText);
@@ -620,7 +643,7 @@ function inCorrectA5() {
 
 function timeOut() {
     alert("You've run out of time!");
-    secondsLeft = 100;
+    secondsLeft = 101;
     goToEndScreen();
 
 };
@@ -659,5 +682,7 @@ function timeOut() {
 init();
 
 startButton.addEventListener("click", startQuiz);
+
+console.log(secondsLeft);
 
 //highScoresLink.addEventListener("click", viewHighScores);
