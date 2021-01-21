@@ -650,33 +650,50 @@ function timeOut() {
 
 //viewing stored scores
 
-// function viewHighScores() {
+function viewHighScores() {
 
-//     var highScoresDiv = document.createElement("div");
+    highScoresLink.remove();
 
-//     document.body.appendChild(highScoresDiv);
+    // var hideScoresEl = document.createElement("button");
+    // var hideScoresText = document.createTextNode("Hide scores");
+    // pageHeader.appendChild(hideScores);
+    // hideScoresEl.appendChild(hideScoresText);
 
-//     var scoresHeading = document.createElement("h2");
-//     var scoresHeadingText = document.createTextNode("High scores:")
-//     highScoresDiv.appendChild(scoresHeading);
-//     scoresHeading.appendChild(scoresHeadingText);
+    var scoresHeading = document.createElement("h2");
+    var scoresHeadingText = document.createTextNode("High scores:")
+    pageHeader.appendChild(scoresHeading);
+    scoresHeading.appendChild(scoresHeadingText);
 
-//     for (var i = 0; i < highScoreList.length; i++) {
-//      var highScoreEntry = highScoreList[i];
+    // for (var i = 0; i < highScoreList.length; i++) {
+    //  var highScoreEntry = highScoreList[i];
     
-//      var scoreListColumn = document.createElement("ul")
-//      launchCentral.appendChild(scoreListColumn);
+    //  var scoreListColumn = document.createElement("ul")
+    //  launchCentral.appendChild(scoreListColumn);
 
 
-//      var scoreRow = document.createElement("li");
-//      scoreRow.textContent = highScoreEntry;
-//         scoreListColumn.appendChild(scoreRow);
+    //  var scoreRow = document.createElement("li");
+    //  scoreRow.textContent = highScoreEntry;
+    //     scoreListColumn.appendChild(scoreRow);
+
+    
 
 
-//   }
+  };
 
   
-// };
+// }
+
+// function hideScores() {
+//     hideScoresEl.remove();
+//     hideScoresText.remove();
+//     scoresHeading.remove();
+//     scoresHeadingText.remove();
+
+//     var highScoresLink = document.createElement("button");
+//     var highScoresLinkText = document.createTextNode("View high scores");
+//     pageHeader.appendChild(highScoresLink);
+//     highScoresLink.appendChild(highScoresLinkText);
+// }
 
 
 init();
@@ -685,4 +702,6 @@ startButton.addEventListener("click", startQuiz);
 
 console.log(secondsLeft);
 
-//highScoresLink.addEventListener("click", viewHighScores);
+highScoresLink.addEventListener("click", viewHighScores);
+
+// hideScoresEl.addEventListener("click", hideScores())
