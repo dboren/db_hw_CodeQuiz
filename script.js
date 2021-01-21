@@ -97,9 +97,13 @@ var timerInterval;
 
 var highScoreList = [];
 
+var questionsAnswered = 0;
+
 //var countDownStop = false;
 
 function init() {
+
+    questionsAnswered = 0;
 
     var fetchScore = localStorage.getItem("scoreEntry");
     if (fetchScore) highScoreList.push(JSON.parse(fetchScore));
@@ -195,6 +199,8 @@ function correctA1() {
     currentScore = currentScore +5;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = "When an html element is nested within another html element, the nested element is called the other element's ______.";
 
@@ -252,6 +258,8 @@ function inCorrectA1() {
     console.log(currentScore);
     secondsLeft = secondsLeft - 10;
     timerText.textcontent = ("Seconds remaining: " + secondsLeft);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = ("When an html element is nested within another html element, the nested element is called the other element's ______.");
 
@@ -295,6 +303,8 @@ function correctA2() {
     currentScore = currentScore +5;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = "The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.";
 
@@ -336,6 +346,8 @@ function inCorrectA2() {
     console.log(currentScore);
     secondsLeft = secondsLeft - 10;
     timerText.textcontent = ("Seconds remaining: " + secondsLeft);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = "The following code '(var i = 0; i > array.length; i++)' is an example of a/an ______.";
 
@@ -376,6 +388,8 @@ function correctA3() {
     currentScore = currentScore +5;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = "Which method adds a new item to an existing array?";
 
@@ -419,6 +433,8 @@ function inCorrectA3() {
     console.log(currentScore);
     secondsLeft = secondsLeft - 10;
     timerText.textcontent = ("Seconds remaining: " + secondsLeft);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = "Which method adds a new item to an existing array?";
 
@@ -458,6 +474,8 @@ function correctA4() {
     currentScore = currentScore +5;
     scoreText.textContent = ("Current score: " + currentScore);
     console.log(currentScore);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = "What attribute does a # in a css selector target?";
 
@@ -500,6 +518,8 @@ function inCorrectA4() {
     console.log(currentScore);
     secondsLeft = secondsLeft - 10;
     timerText.textcontent = ("Seconds remaining: " + secondsLeft);
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
 
     question.textContent = "What attribute does a # in a css selector target?";
 
@@ -581,16 +601,20 @@ function goToEndScreen() {
 //When Q5 is answered correctly
 function correctA5() {
     currentScore = currentScore + 5;
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
     resultText.textContent = ("Correct! Your final score is " + currentScore + " ");
-    clearInterval(timerInterval);
+    // clearInterval(timerInterval);
     goToEndScreen();
 };
 
 //When Q5 is answered INcorrectly
 function inCorrectA5() {
     currentScore = currentScore - 3;
+    questionsAnswered++;
+    console.log("questions answered: " + questionsAnswered);
     resultText.textContent = ("Correct! Your final score is " + currentScore + " ");
-    clearInterval(timerInterval);
+    // clearInterval(timerInterval);
     goToEndScreen();
 };
 
