@@ -106,7 +106,9 @@ function init() {
     questionsAnswered = 0;
 
     var fetchScore = localStorage.getItem("scoreEntry");
-    if (fetchScore) highScoreList.push(JSON.parse(fetchScore));
+    if (fetchScore) {highScoreList.push(JSON.parse(fetchScore));};
+    console.log("fetchScore: " + fetchScore);
+    console.log(highScoreList);
 
     document.body.appendChild(pageHeader);
     pageHeader.appendChild(highScoresLink);
@@ -664,21 +666,22 @@ function viewHighScores() {
     pageHeader.appendChild(scoresHeading);
     scoresHeading.appendChild(scoresHeadingText);
 
-    // for (var i = 0; i < highScoreList.length; i++) {
-    //  var highScoreEntry = highScoreList[i];
+    for (var i = 0; i < highScoreList.length; i++) {
+     var highScoreEntry = highScoreList[i];
+     console.log("highScoreEntry: " + highScoreEntry)
     
-    //  var scoreListColumn = document.createElement("ul")
-    //  launchCentral.appendChild(scoreListColumn);
-
-
-    //  var scoreRow = document.createElement("li");
-    //  scoreRow.textContent = highScoreEntry;
-    //     scoreListColumn.appendChild(scoreRow);
-
+     var scoreListColumn = document.createElement("ul")
+     pageHeader.appendChild(scoreListColumn);
     
 
 
-  };
+     var scoreRow = document.createElement("li");
+     scoreRow.textContent = highScoreEntry;
+        scoreListColumn.appendChild(scoreRow);
+        console.log("scoreRowText: " + scoreRow);
+
+      }
+};
 
   
 // }
